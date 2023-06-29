@@ -43,11 +43,6 @@ namespace PryIEFI_Andres_Coseani
 
         }
 
-
-
-
-
-
         private void cmdRegistrar_Click(object sender, EventArgs e)
         {
             if (txtIDVentas.Text != "")
@@ -56,9 +51,7 @@ namespace PryIEFI_Andres_Coseani
                 {
                     if (dtpFechaVentas.Value >= DateTime.Today)
                     {
-                        //cargar datos de matriz
-                        //tengo que hacer la matriz publica
-                        //y crear las filas
+                        
                         MatrizVentas[Indicefilas, 0] = txtIDVentas.Text;
                         MatrizVentas[Indicefilas, 1] = txtNombreVentas.Text;
                         MatrizVentas[Indicefilas, 2] = dtpFechaVentas.Value.ToString();
@@ -99,16 +92,6 @@ namespace PryIEFI_Andres_Coseani
 
         private void frmCargaVentas_Load(object sender, EventArgs e)
         {
-            
-        }
-
-        private void dgvVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void tabConsultaVentas_Click(object sender, EventArgs e)
-        {
             Indicecolumnas = 0;
             Indicefilas = 0;
 
@@ -123,6 +106,16 @@ namespace PryIEFI_Andres_Coseani
                 Indicefilas++;
 
             }
+        }
+
+        private void dgvVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabConsultaVentas_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
