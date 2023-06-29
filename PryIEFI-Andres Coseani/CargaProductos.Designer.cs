@@ -30,21 +30,21 @@
         {
             this.tabVentanaRegistro = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.txtIDRegistro = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.dtpFechaRegistro = new System.Windows.Forms.DateTimePicker();
-            this.lblIDRegistro = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblFechaRegistro = new System.Windows.Forms.Label();
-            this.cmdRegistrar = new System.Windows.Forms.Button();
-            this.cmdCancelar = new System.Windows.Forms.Button();
             this.cmdListadodeRegistro = new System.Windows.Forms.Button();
-            this.cmdConsultar = new System.Windows.Forms.Button();
+            this.cmdCancelar = new System.Windows.Forms.Button();
+            this.cmdRegistrar = new System.Windows.Forms.Button();
+            this.lblFechaRegistro = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblIDRegistro = new System.Windows.Forms.Label();
+            this.dtpFechaRegistro = new System.Windows.Forms.DateTimePicker();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtIDRegistro = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.IDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmdConsultar = new System.Windows.Forms.Button();
             this.tabVentanaRegistro.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -84,6 +84,88 @@
             this.tabPage1.Text = "Registro";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // cmdListadodeRegistro
+            // 
+            this.cmdListadodeRegistro.Location = new System.Drawing.Point(361, 320);
+            this.cmdListadodeRegistro.Name = "cmdListadodeRegistro";
+            this.cmdListadodeRegistro.Size = new System.Drawing.Size(140, 49);
+            this.cmdListadodeRegistro.TabIndex = 8;
+            this.cmdListadodeRegistro.Text = "Ver Listados";
+            this.cmdListadodeRegistro.UseVisualStyleBackColor = true;
+            this.cmdListadodeRegistro.Click += new System.EventHandler(this.cmdListadodeRegistro_Click);
+            // 
+            // cmdCancelar
+            // 
+            this.cmdCancelar.Location = new System.Drawing.Point(517, 320);
+            this.cmdCancelar.Name = "cmdCancelar";
+            this.cmdCancelar.Size = new System.Drawing.Size(143, 49);
+            this.cmdCancelar.TabIndex = 7;
+            this.cmdCancelar.Text = "Cancelar";
+            this.cmdCancelar.UseVisualStyleBackColor = true;
+            this.cmdCancelar.Click += new System.EventHandler(this.cmdCancelar_Click);
+            // 
+            // cmdRegistrar
+            // 
+            this.cmdRegistrar.Location = new System.Drawing.Point(198, 320);
+            this.cmdRegistrar.Name = "cmdRegistrar";
+            this.cmdRegistrar.Size = new System.Drawing.Size(143, 49);
+            this.cmdRegistrar.TabIndex = 6;
+            this.cmdRegistrar.Text = "Registrar";
+            this.cmdRegistrar.UseVisualStyleBackColor = true;
+            this.cmdRegistrar.Click += new System.EventHandler(this.cmdRegistrar_Click);
+            // 
+            // lblFechaRegistro
+            // 
+            this.lblFechaRegistro.AutoSize = true;
+            this.lblFechaRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaRegistro.Location = new System.Drawing.Point(46, 233);
+            this.lblFechaRegistro.Name = "lblFechaRegistro";
+            this.lblFechaRegistro.Size = new System.Drawing.Size(80, 29);
+            this.lblFechaRegistro.TabIndex = 5;
+            this.lblFechaRegistro.Text = "Fecha";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(45, 142);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(101, 29);
+            this.lblNombre.TabIndex = 4;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // lblIDRegistro
+            // 
+            this.lblIDRegistro.AutoSize = true;
+            this.lblIDRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIDRegistro.Location = new System.Drawing.Point(46, 55);
+            this.lblIDRegistro.Name = "lblIDRegistro";
+            this.lblIDRegistro.Size = new System.Drawing.Size(36, 29);
+            this.lblIDRegistro.TabIndex = 3;
+            this.lblIDRegistro.Text = "ID";
+            // 
+            // dtpFechaRegistro
+            // 
+            this.dtpFechaRegistro.Location = new System.Drawing.Point(267, 232);
+            this.dtpFechaRegistro.Name = "dtpFechaRegistro";
+            this.dtpFechaRegistro.Size = new System.Drawing.Size(360, 30);
+            this.dtpFechaRegistro.TabIndex = 2;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(267, 142);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(244, 30);
+            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            // 
+            // txtIDRegistro
+            // 
+            this.txtIDRegistro.Location = new System.Drawing.Point(267, 55);
+            this.txtIDRegistro.Name = "txtIDRegistro";
+            this.txtIDRegistro.Size = new System.Drawing.Size(244, 30);
+            this.txtIDRegistro.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dataGridView1);
@@ -96,94 +178,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // txtIDRegistro
-            // 
-            this.txtIDRegistro.Location = new System.Drawing.Point(267, 55);
-            this.txtIDRegistro.Name = "txtIDRegistro";
-            this.txtIDRegistro.Size = new System.Drawing.Size(244, 30);
-            this.txtIDRegistro.TabIndex = 0;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(267, 142);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(244, 30);
-            this.txtNombre.TabIndex = 1;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
-            // 
-            // dtpFechaRegistro
-            // 
-            this.dtpFechaRegistro.Location = new System.Drawing.Point(267, 232);
-            this.dtpFechaRegistro.Name = "dtpFechaRegistro";
-            this.dtpFechaRegistro.Size = new System.Drawing.Size(360, 30);
-            this.dtpFechaRegistro.TabIndex = 2;
-            // 
-            // lblIDRegistro
-            // 
-            this.lblIDRegistro.AutoSize = true;
-            this.lblIDRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDRegistro.Location = new System.Drawing.Point(46, 55);
-            this.lblIDRegistro.Name = "lblIDRegistro";
-            this.lblIDRegistro.Size = new System.Drawing.Size(36, 29);
-            this.lblIDRegistro.TabIndex = 3;
-            this.lblIDRegistro.Text = "ID";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(45, 142);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(101, 29);
-            this.lblNombre.TabIndex = 4;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // lblFechaRegistro
-            // 
-            this.lblFechaRegistro.AutoSize = true;
-            this.lblFechaRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaRegistro.Location = new System.Drawing.Point(46, 233);
-            this.lblFechaRegistro.Name = "lblFechaRegistro";
-            this.lblFechaRegistro.Size = new System.Drawing.Size(80, 29);
-            this.lblFechaRegistro.TabIndex = 5;
-            this.lblFechaRegistro.Text = "Fecha";
-            // 
-            // cmdRegistrar
-            // 
-            this.cmdRegistrar.Location = new System.Drawing.Point(198, 320);
-            this.cmdRegistrar.Name = "cmdRegistrar";
-            this.cmdRegistrar.Size = new System.Drawing.Size(143, 49);
-            this.cmdRegistrar.TabIndex = 6;
-            this.cmdRegistrar.Text = "Registrar";
-            this.cmdRegistrar.UseVisualStyleBackColor = true;
-            // 
-            // cmdCancelar
-            // 
-            this.cmdCancelar.Location = new System.Drawing.Point(517, 320);
-            this.cmdCancelar.Name = "cmdCancelar";
-            this.cmdCancelar.Size = new System.Drawing.Size(143, 49);
-            this.cmdCancelar.TabIndex = 7;
-            this.cmdCancelar.Text = "Cancelar";
-            this.cmdCancelar.UseVisualStyleBackColor = true;
-            // 
-            // cmdListadodeRegistro
-            // 
-            this.cmdListadodeRegistro.Location = new System.Drawing.Point(361, 320);
-            this.cmdListadodeRegistro.Name = "cmdListadodeRegistro";
-            this.cmdListadodeRegistro.Size = new System.Drawing.Size(140, 49);
-            this.cmdListadodeRegistro.TabIndex = 8;
-            this.cmdListadodeRegistro.Text = "Ver Listados";
-            this.cmdListadodeRegistro.UseVisualStyleBackColor = true;
-            // 
-            // cmdConsultar
-            // 
-            this.cmdConsultar.Location = new System.Drawing.Point(269, 6);
-            this.cmdConsultar.Name = "cmdConsultar";
-            this.cmdConsultar.Size = new System.Drawing.Size(136, 47);
-            this.cmdConsultar.TabIndex = 0;
-            this.cmdConsultar.Text = "Consultar";
-            this.cmdConsultar.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -213,6 +207,15 @@
             this.FechaRegistro.HeaderText = "FechadeRegistro";
             this.FechaRegistro.Name = "FechaRegistro";
             this.FechaRegistro.Width = 200;
+            // 
+            // cmdConsultar
+            // 
+            this.cmdConsultar.Location = new System.Drawing.Point(269, 6);
+            this.cmdConsultar.Name = "cmdConsultar";
+            this.cmdConsultar.Size = new System.Drawing.Size(136, 47);
+            this.cmdConsultar.TabIndex = 0;
+            this.cmdConsultar.Text = "Consultar";
+            this.cmdConsultar.UseVisualStyleBackColor = true;
             // 
             // frmCargaProductos
             // 

@@ -16,5 +16,19 @@ namespace PryIEFI_Andres_Coseani
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmCargaProductos frmCargaProductos = new frmCargaProductos();
+            frmCargaProductos.ShowDialog();
+            this.Close();
+        }
+
+        private void cmdVolverVentas_Click(object sender, EventArgs e)
+        {
+            frmCargaVentas frmCargarVentas =    new frmCargaVentas();
+            frmCargarVentas.ShowDialog();
+            this.Close();
+        }
     }
 }

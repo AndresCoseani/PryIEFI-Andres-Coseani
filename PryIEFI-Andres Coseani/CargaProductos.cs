@@ -26,5 +26,65 @@ namespace PryIEFI_Andres_Coseani
         {
 
         }
+        void limpiar()
+        {
+            dtpFechaRegistro.Value = DateTime.Today;
+            txtIDRegistro.Text = "";
+            txtNombre.Text = "";
+            
+
+        }
+
+        private void cmdRegistrar_Click(object sender, EventArgs e)
+        {
+            if (txtIDRegistro.Text != "")
+            {
+                if (txtNombre.Text != "")
+                {
+                    if (dtpFechaRegistro.Value >= DateTime.Today)
+                    {
+                        //cargar datos de matriz
+                        //tengo que hacer la matriz publica
+                        //y crear las filas
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("La fecha ingresada debe ser actual o una fecha futura", "cargar tarea", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        dtpFechaRegistro.Value= DateTime.Today;
+                        dtpFechaRegistro.Focus();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Falta completar Nombre");
+                    txtNombre.Focus();
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Falta completar ID");
+                txtIDRegistro.Focus();
+            }
+            limpiar();
+        }
+
+        private void cmdListadodeRegistro_Click(object sender, EventArgs e)
+        {
+            
+            frmListados frmlistados = new frmListados();
+            frmlistados.ShowDialog();
+            this.Close();
+        }
+
+        private void cmdCancelar_Click(object sender, EventArgs e)
+        {
+            
+            frmPrincipal frmPrincipal = new frmPrincipal();
+            frmPrincipal.ShowDialog();
+            this.Close();
+        }
     }
 }
