@@ -47,9 +47,6 @@ namespace PryIEFI_Andres_Coseani
                 {
                     if (dtpFechaRegistro.Value >= DateTime.Today)
                     {
-                        //cargar datos de matriz
-                        //tengo que hacer la matriz publica
-                        //y crear las filas
                         MatrizProductos[Indicefilas, 0] = txtIDRegistro.Text;
                         MatrizProductos[Indicefilas, 1] = txtNombre.Text;
                         MatrizProductos[Indicefilas, 2] = dtpFechaRegistro.Value.ToString();
@@ -110,6 +107,22 @@ namespace PryIEFI_Andres_Coseani
 
         private void frmCargaProductos_Load(object sender, EventArgs e)
         {
+            
+
+        }
+
+        private void cmdConsultarCargas_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+                    
+        }
+
+        private void cmdConsultarProducto_Click(object sender, EventArgs e)
+        {
             Indicecolumnas = 0;
             Indicefilas = 0;
 
@@ -117,23 +130,14 @@ namespace PryIEFI_Andres_Coseani
             {
 
                 dgvCarga.Rows.Add(MatrizProductos[Indicefilas, 0],
-                 MatrizProductos[Indicefilas, 1],
-                 MatrizProductos[Indicefilas, 2],
-                 MatrizProductos[Indicefilas, 3],
-                 MatrizProductos[Indicefilas, 4]);
-                 
+                MatrizProductos[Indicefilas, 1],
+                MatrizProductos[Indicefilas, 2]);
+
 
                 Indicefilas++;
-
-
+  
 
             }
-
-        }
-
-        private void cmdConsultarCargas_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

@@ -44,6 +44,7 @@
             this.IDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmdConsultarProducto = new System.Windows.Forms.Button();
             this.tabVentanaRegistro.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -56,6 +57,7 @@
             this.tabVentanaRegistro.AccessibleName = "";
             this.tabVentanaRegistro.Controls.Add(this.tabPage1);
             this.tabVentanaRegistro.Controls.Add(this.tabPage2);
+            this.tabVentanaRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabVentanaRegistro.Location = new System.Drawing.Point(12, 12);
             this.tabVentanaRegistro.Name = "tabVentanaRegistro";
             this.tabVentanaRegistro.SelectedIndex = 0;
@@ -168,15 +170,17 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.cmdConsultarProducto);
             this.tabPage2.Controls.Add(this.dgvCarga);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(701, 402);
+            this.tabPage2.Size = new System.Drawing.Size(701, 390);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // dgvCarga
             // 
@@ -185,7 +189,7 @@
             this.IDProducto,
             this.NombreProducto,
             this.FechaRegistro});
-            this.dgvCarga.Location = new System.Drawing.Point(121, 62);
+            this.dgvCarga.Location = new System.Drawing.Point(127, 79);
             this.dgvCarga.Name = "dgvCarga";
             this.dgvCarga.Size = new System.Drawing.Size(444, 293);
             this.dgvCarga.TabIndex = 1;
@@ -206,6 +210,16 @@
             this.FechaRegistro.HeaderText = "FechadeRegistro";
             this.FechaRegistro.Name = "FechaRegistro";
             this.FechaRegistro.Width = 200;
+            // 
+            // cmdConsultarProducto
+            // 
+            this.cmdConsultarProducto.Location = new System.Drawing.Point(242, 21);
+            this.cmdConsultarProducto.Name = "cmdConsultarProducto";
+            this.cmdConsultarProducto.Size = new System.Drawing.Size(168, 42);
+            this.cmdConsultarProducto.TabIndex = 2;
+            this.cmdConsultarProducto.Text = "Consultar";
+            this.cmdConsultarProducto.UseVisualStyleBackColor = true;
+            this.cmdConsultarProducto.Click += new System.EventHandler(this.cmdConsultarProducto_Click);
             // 
             // frmCargaProductos
             // 
@@ -243,5 +257,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaRegistro;
+        private System.Windows.Forms.Button cmdConsultarProducto;
     }
 }

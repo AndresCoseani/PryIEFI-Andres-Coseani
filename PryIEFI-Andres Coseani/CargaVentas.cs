@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace PryIEFI_Andres_Coseani
 {
     public partial class frmCargaVentas : Form
     {
-        string[,] MatrizVentas = new string[5,3];
+        string[,] MatrizVentas = new string[5,4];
         int Indicefilas;
         int Indicecolumnas;
 
@@ -40,6 +41,7 @@ namespace PryIEFI_Andres_Coseani
             dtpFechaVentas.Value = DateTime.Today;
             txtIDVentas.Text = "";
             txtNombreVentas.Text = "";
+            nudCantidad.Text = "";
 
         }
 
@@ -49,25 +51,39 @@ namespace PryIEFI_Andres_Coseani
             {
                 if (txtNombreVentas.Text != "")
                 {
-                    if (dtpFechaVentas.Value >= DateTime.Today)
+                    if (nudCantidad.Value > 0)
                     {
-                        
-                        MatrizVentas[Indicefilas, 0] = txtIDVentas.Text;
-                        MatrizVentas[Indicefilas, 1] = txtNombreVentas.Text;
-                        MatrizVentas[Indicefilas, 2] = dtpFechaVentas.Value.ToString();
 
-                        while (Indicefilas< MatrizVentas.GetLength(0))
+
+                        if (dtpFechaVentas.Value >= DateTime.Today)
                         {
-                            cmdRegistrarVentas.Enabled = false;
-                        }
 
+                            MatrizVentas[Indicefilas, 0] = txtIDVentas.Text;
+                            MatrizVentas[Indicefilas, 1] = txtNombreVentas.Text;
+                            MatrizVentas[Indicefilas, 2] = nudCantidad.Text;
+                            MatrizVentas[Indicefilas, 3] = dtpFechaVentas.Value.ToString();
+
+                            Indicefilas++;
+
+                            if (Indicefilas == MatrizVentas.GetLength(0))
+                            {
+                                cmdRegistrarVentas.Enabled = false;
+                            }
+
+                            limpiar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("La fecha ingresada debe ser actual o una fecha futura", "cargar tarea", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            dtpFechaVentas.Value = DateTime.Today;
+                            dtpFechaVentas.Focus();
+                        }
 
                     }
                     else
                     {
-                        MessageBox.Show("La fecha ingresada debe ser actual o una fecha futura", "cargar tarea", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        dtpFechaVentas.Value = DateTime.Today;
-                        dtpFechaVentas.Focus();
+                        MessageBox.Show("Falta completar Cantidad");
+                        nudCantidad.Focus();
                     }
                 }
                 else
@@ -82,7 +98,7 @@ namespace PryIEFI_Andres_Coseani
                 MessageBox.Show("Falta completar ID");
                 txtIDVentas.Focus();
             }
-            limpiar();
+            
         }
 
         private void button1_Click_2(object sender, EventArgs e)
@@ -92,6 +108,26 @@ namespace PryIEFI_Andres_Coseani
 
         private void frmCargaVentas_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        private void dgvVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void tabConsultaVentas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdConsultarVentas_Click(object sender, EventArgs e)
+        {
             Indicecolumnas = 0;
             Indicefilas = 0;
 
@@ -99,23 +135,13 @@ namespace PryIEFI_Andres_Coseani
             {
 
                 dgvVentas.Rows.Add(MatrizVentas[Indicefilas, 0],
-                 MatrizVentas[Indicefilas, 1],
-                 MatrizVentas[Indicefilas, 2],
-                 MatrizVentas[Indicefilas, 3],
-                 MatrizVentas[Indicefilas, 4]);
+                MatrizVentas[Indicefilas, 1],
+                MatrizVentas[Indicefilas, 2],
+                MatrizVentas[Indicefilas, 3]);
+
                 Indicefilas++;
 
             }
-        }
-
-        private void dgvVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void tabConsultaVentas_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
