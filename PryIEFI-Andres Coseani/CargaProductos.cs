@@ -12,6 +12,10 @@ namespace PryIEFI_Andres_Coseani
 {
     public partial class frmCargaProductos : Form
     {
+        string[,] MatrizProductos = new string[5,3];
+        int Indicefilas;
+        int Indicecolumnas;
+
         public frmCargaProductos()
         {
             InitializeComponent();
@@ -24,16 +28,16 @@ namespace PryIEFI_Andres_Coseani
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+           
         }
         void limpiar()
         {
             dtpFechaRegistro.Value = DateTime.Today;
             txtIDRegistro.Text = "";
             txtNombre.Text = "";
-            
+        
+        }    
 
-        }
 
         private void cmdRegistrar_Click(object sender, EventArgs e)
         {
@@ -46,6 +50,18 @@ namespace PryIEFI_Andres_Coseani
                         //cargar datos de matriz
                         //tengo que hacer la matriz publica
                         //y crear las filas
+                        MatrizProductos[Indicefilas, 0] = txtIDRegistro.Text;
+                        MatrizProductos[Indicefilas, 1] = txtNombre.Text;
+                        MatrizProductos[Indicefilas, 2] = dtpFechaRegistro.Value.ToString();
+
+
+                        Indicefilas++;
+
+                        if (Indicefilas == MatrizProductos.GetLength(0))
+                        {
+                            cmdRegistrar.Enabled = false;
+                        }
+
 
 
                     }
@@ -85,6 +101,39 @@ namespace PryIEFI_Andres_Coseani
             frmPrincipal frmPrincipal = new frmPrincipal();
             frmPrincipal.ShowDialog();
             this.Close();
+        }
+
+        private void txtIDRegistro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmCargaProductos_Load(object sender, EventArgs e)
+        {
+            Indicecolumnas = 0;
+            Indicefilas = 0;
+
+            while (Indicefilas < MatrizProductos.GetLength(0))
+            {
+
+                dgvCarga.Rows.Add(MatrizProductos[Indicefilas, 0],
+                 MatrizProductos[Indicefilas, 1],
+                 MatrizProductos[Indicefilas, 2],
+                 MatrizProductos[Indicefilas, 3],
+                 MatrizProductos[Indicefilas, 4]);
+                 
+
+                Indicefilas++;
+
+
+
+            }
+
+        }
+
+        private void cmdConsultarCargas_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
