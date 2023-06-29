@@ -26,7 +26,7 @@ namespace PryIEFI_Andres_Coseani
         {
             frmCargaProductos frmProductos = new frmCargaProductos();
             frmProductos.ShowDialog();
-            frmProductos.Close();
+            this.Close();
         }
 
         private void cmdVentas_Click(object sender, EventArgs e)
