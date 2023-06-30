@@ -33,7 +33,7 @@ namespace PryIEFI_Andres_Coseani
                 {
                     if (MatrizListados[f, 0] != null)
                     {
-                        lstDetallesProductos.Items.Add("Producto " + (f, +1).ToString());
+                        
                         lstDetallesProductos.Items.Add(" ID: " + MatrizListados[f, 0] + " \nNombre: " + MatrizListados[f, 1]
                             + " \nFecha: " + MatrizListados[f, 2]);
                     }
@@ -49,7 +49,7 @@ namespace PryIEFI_Andres_Coseani
                     {
                         if (MatrizListados[IndiceFilas, 0] != null)
                         {
-                            lstDetallesVentas.Items.Add("Ventas " + (IndiceFilas, +1).ToString());
+                            
                             lstDetallesVentas.Items.Add(" ID: " + MatrizListados[IndiceFilas, 0] + " \nProducto: " + MatrizListados[IndiceFilas, 1] + " \nCantidad: " + MatrizListados[IndiceFilas, 2]
                                 + " \nFecha:" + MatrizListados[IndiceFilas, 3]);
                         }
