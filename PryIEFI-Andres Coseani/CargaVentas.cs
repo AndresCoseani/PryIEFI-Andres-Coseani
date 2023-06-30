@@ -173,6 +173,8 @@ namespace PryIEFI_Andres_Coseani
 
         private void cmdMostrarCantidad_Click(object sender, EventArgs e)
         {
+            //tryParse es para identificar/leer el texto q esta en la matriz y con out int valor 
+            //saca el valor 
             int CantidadIngresada = (int)nudIngreseCantidad.Value;
 
             int filas = MatrizVentas.GetLength(0);
