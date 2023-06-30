@@ -32,6 +32,8 @@
             this.cmdVolverVentas = new System.Windows.Forms.Button();
             this.lstDetallesProductos = new System.Windows.Forms.ListBox();
             this.lstDetallesVentas = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmdVolveraRegistros
@@ -61,7 +63,7 @@
             this.lstDetallesProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstDetallesProductos.FormattingEnabled = true;
             this.lstDetallesProductos.ItemHeight = 25;
-            this.lstDetallesProductos.Location = new System.Drawing.Point(511, 22);
+            this.lstDetallesProductos.Location = new System.Drawing.Point(9, 35);
             this.lstDetallesProductos.Name = "lstDetallesProductos";
             this.lstDetallesProductos.Size = new System.Drawing.Size(496, 454);
             this.lstDetallesProductos.TabIndex = 6;
@@ -71,17 +73,39 @@
             this.lstDetallesVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstDetallesVentas.FormattingEnabled = true;
             this.lstDetallesVentas.ItemHeight = 25;
-            this.lstDetallesVentas.Location = new System.Drawing.Point(9, 22);
+            this.lstDetallesVentas.Location = new System.Drawing.Point(511, 35);
             this.lstDetallesVentas.Name = "lstDetallesVentas";
             this.lstDetallesVentas.Size = new System.Drawing.Size(496, 454);
             this.lstDetallesVentas.TabIndex = 8;
             this.lstDetallesVentas.SelectedIndexChanged += new System.EventHandler(this.lstDetallesVentas_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 22);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Productos";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(535, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 22);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Ventas";
             // 
             // frmListados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 552);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lstDetallesVentas);
             this.Controls.Add(this.lstDetallesProductos);
             this.Controls.Add(this.cmdVolverVentas);
@@ -90,6 +114,7 @@
             this.Text = "Listado";
             this.Load += new System.EventHandler(this.frmListados_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -99,5 +124,7 @@
         private System.Windows.Forms.Button cmdVolverVentas;
         private System.Windows.Forms.ListBox lstDetallesProductos;
         private System.Windows.Forms.ListBox lstDetallesVentas;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
