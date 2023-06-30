@@ -30,13 +30,14 @@
         {
             this.cmdProductos = new System.Windows.Forms.Button();
             this.cmdVentas = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblBienvenido = new System.Windows.Forms.Label();
+            this.lbltexto2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmdProductos
             // 
             this.cmdProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdProductos.Location = new System.Drawing.Point(12, 124);
+            this.cmdProductos.Location = new System.Drawing.Point(112, 143);
             this.cmdProductos.Name = "cmdProductos";
             this.cmdProductos.Size = new System.Drawing.Size(236, 106);
             this.cmdProductos.TabIndex = 0;
@@ -47,7 +48,7 @@
             // cmdVentas
             // 
             this.cmdVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdVentas.Location = new System.Drawing.Point(411, 124);
+            this.cmdVentas.Location = new System.Drawing.Point(112, 271);
             this.cmdVentas.Name = "cmdVentas";
             this.cmdVentas.Size = new System.Drawing.Size(236, 106);
             this.cmdVentas.TabIndex = 1;
@@ -55,22 +56,33 @@
             this.cmdVentas.UseVisualStyleBackColor = true;
             this.cmdVentas.Click += new System.EventHandler(this.cmdVentas_Click);
             // 
-            // label1
+            // lblBienvenido
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(642, 39);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Bienvenido, seleccione que quiere cargar";
+            this.lblBienvenido.AutoSize = true;
+            this.lblBienvenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenido.Location = new System.Drawing.Point(144, 32);
+            this.lblBienvenido.Name = "lblBienvenido";
+            this.lblBienvenido.Size = new System.Drawing.Size(187, 39);
+            this.lblBienvenido.TabIndex = 2;
+            this.lblBienvenido.Text = "Bienvenido";
+            // 
+            // lbltexto2
+            // 
+            this.lbltexto2.AutoSize = true;
+            this.lbltexto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltexto2.Location = new System.Drawing.Point(1, 85);
+            this.lbltexto2.Name = "lbltexto2";
+            this.lbltexto2.Size = new System.Drawing.Size(463, 39);
+            this.lbltexto2.TabIndex = 3;
+            this.lbltexto2.Text = " seleccione que quiere cargar";
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 271);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(472, 398);
+            this.Controls.Add(this.lbltexto2);
+            this.Controls.Add(this.lblBienvenido);
             this.Controls.Add(this.cmdVentas);
             this.Controls.Add(this.cmdProductos);
             this.Name = "frmPrincipal";
@@ -85,7 +97,8 @@
 
         private System.Windows.Forms.Button cmdProductos;
         private System.Windows.Forms.Button cmdVentas;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBienvenido;
+        private System.Windows.Forms.Label lbltexto2;
     }
 }
 

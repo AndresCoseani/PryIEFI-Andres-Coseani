@@ -77,10 +77,10 @@
             this.tabPage1.Controls.Add(this.txtNombre);
             this.tabPage1.Controls.Add(this.txtIDRegistro);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(701, 402);
+            this.tabPage1.Size = new System.Drawing.Size(701, 390);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Registro";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -189,9 +189,9 @@
             this.IDProducto,
             this.NombreProducto,
             this.FechaRegistro});
-            this.dgvCarga.Location = new System.Drawing.Point(127, 79);
+            this.dgvCarga.Location = new System.Drawing.Point(119, 109);
             this.dgvCarga.Name = "dgvCarga";
-            this.dgvCarga.Size = new System.Drawing.Size(444, 293);
+            this.dgvCarga.Size = new System.Drawing.Size(444, 262);
             this.dgvCarga.TabIndex = 1;
             this.dgvCarga.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -213,7 +213,7 @@
             // 
             // cmdConsultarProducto
             // 
-            this.cmdConsultarProducto.Location = new System.Drawing.Point(242, 21);
+            this.cmdConsultarProducto.Location = new System.Drawing.Point(256, 21);
             this.cmdConsultarProducto.Name = "cmdConsultarProducto";
             this.cmdConsultarProducto.Size = new System.Drawing.Size(168, 42);
             this.cmdConsultarProducto.TabIndex = 2;

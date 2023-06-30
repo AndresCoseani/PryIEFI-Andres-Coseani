@@ -12,7 +12,7 @@ namespace PryIEFI_Andres_Coseani
 {
     public partial class frmCargaProductos : Form
     {
-        string[,] MatrizProductos = new string[5,3];
+        public string[,] MatrizProductos = new string[5,3];
         int Indicefilas;
         int Indicecolumnas;
 
@@ -60,7 +60,7 @@ namespace PryIEFI_Andres_Coseani
                         }
 
 
-
+                        limpiar();
                     }
                     else
                     {
@@ -81,13 +81,13 @@ namespace PryIEFI_Andres_Coseani
                 MessageBox.Show("Falta completar ID");
                 txtIDRegistro.Focus();
             }
-            limpiar();
+            
         }
 
         private void cmdListadodeRegistro_Click(object sender, EventArgs e)
         {
             
-            frmListados frmlistados = new frmListados();
+            frmListados frmlistados = new frmListados("Productos", MatrizProductos);
             frmlistados.ShowDialog();
             this.Close();
         }

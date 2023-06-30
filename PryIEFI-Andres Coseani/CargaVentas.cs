@@ -4,16 +4,18 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PryIEFI_Andres_Coseani
 {
     public partial class frmCargaVentas : Form
     {
-        string[,] MatrizVentas = new string[5,4];
+        public string[,] MatrizVentas = new string[5,4];
         int Indicefilas;
         int Indicecolumnas;
 
@@ -34,7 +36,8 @@ namespace PryIEFI_Andres_Coseani
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            frmListados frmListados = new frmListados("Ventas", MatrizVentas);
+            frmListados.ShowDialog();
         }
         void limpiar()
         {
@@ -131,6 +134,14 @@ namespace PryIEFI_Andres_Coseani
             Indicecolumnas = 0;
             Indicefilas = 0;
 
+            for (int Indicefilas = 0; Indicefilas < MatrizVentas.GetLength(0);)
+            {
+                cboNombreProductos.Items.Add(MatrizVentas[Indicefilas, 1]);
+
+                Indicefilas++;
+                
+            }
+            
             while (Indicefilas < MatrizVentas.GetLength(0))
             {
 
@@ -138,10 +149,92 @@ namespace PryIEFI_Andres_Coseani
                 MatrizVentas[Indicefilas, 1],
                 MatrizVentas[Indicefilas, 2],
                 MatrizVentas[Indicefilas, 3]);
+                
 
                 Indicefilas++;
 
             }
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudCantidad_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cmdMostrarCantidad_Click(object sender, EventArgs e)
+        {
+            int CantidadIngresada = (int)nudIngreseCantidad.Value;
+
+            int filas = MatrizVentas.GetLength(0);
+            int columnas = MatrizVentas.GetLength(1);
+
+            for (int Indicefilas = 0; Indicefilas < filas; Indicefilas++)
+            {
+                for (int Indicecolumnas = 0; Indicecolumnas < columnas; Indicecolumnas++)
+                {
+                    if (int.TryParse(MatrizVentas[Indicefilas, Indicecolumnas], out int valor))
+                    {
+                        if (valor > CantidadIngresada)
+                        {
+                            lstResultados.Items.Add(valor);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void cmdMostrarVentas_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cboNombreProductos.Text))
+            {
+                cmdMostrarVentas.Enabled = false;
+            }
+
+            string ComboBox = cboNombreProductos.Text;
+            {
+
+                lstVentasRegistradas.Items.Clear();
+
+
+                int IndiceColumna = cboNombreProductos.SelectedIndex;
+
+
+                for (int Indicefilas = 0; Indicefilas < MatrizVentas.GetLength(0); Indicefilas++)
+                {
+                    ComboBox = Indicefilas.ToString();
+                    string Matriz = MatrizVentas[Indicefilas, IndiceColumna];
+                    lstVentasRegistradas.Items.Add(MatrizVentas[Indicefilas, 1]);
+                    lstVentasRegistradas.Items.Add(MatrizVentas[Indicefilas, 0]);
+                    lstVentasRegistradas.Items.Add(MatrizVentas[Indicefilas, 2]);
+                    lstVentasRegistradas.Items.Add(MatrizVentas[Indicefilas, 3]);
+                }
+            }
+
+        }
+
+        private void cboNombreProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabNombres_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

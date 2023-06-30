@@ -30,6 +30,11 @@
         {
             this.tabRegistroVentas = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.cmdCancelar = new System.Windows.Forms.Button();
+            this.cmdVerListadoVentas = new System.Windows.Forms.Button();
+            this.cmdRegistrarVentas = new System.Windows.Forms.Button();
             this.dtpFechaVentas = new System.Windows.Forms.DateTimePicker();
             this.txtNombreVentas = new System.Windows.Forms.TextBox();
             this.txtIDVentas = new System.Windows.Forms.TextBox();
@@ -37,26 +42,32 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblIDVenta = new System.Windows.Forms.Label();
             this.tabConsultaVentas = new System.Windows.Forms.TabPage();
-            this.cmdRegistrarVentas = new System.Windows.Forms.Button();
-            this.cmdVerListadoVentas = new System.Windows.Forms.Button();
-            this.cmdCancelar = new System.Windows.Forms.Button();
-            this.dgvVentas = new System.Windows.Forms.DataGridView();
-            this.lblCantidad = new System.Windows.Forms.Label();
+            this.cmdConsultarVentas = new System.Windows.Forms.Button();
             this.tabDatos = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cmdMostrarCantidad = new System.Windows.Forms.Button();
+            this.lstResultados = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nudIngreseCantidad = new System.Windows.Forms.NumericUpDown();
             this.tabNombres = new System.Windows.Forms.TabPage();
-            this.cmdConsultarVentas = new System.Windows.Forms.Button();
-            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
+            this.cboNombreProductos = new System.Windows.Forms.ComboBox();
+            this.lstVentasRegistradas = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmdMostrarVentas = new System.Windows.Forms.Button();
+            this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabRegistroVentas.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabConsultaVentas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
-            this.tabDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
+            this.tabConsultaVentas.SuspendLayout();
+            this.tabDatos.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIngreseCantidad)).BeginInit();
+            this.tabNombres.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // tabRegistroVentas
@@ -91,10 +102,60 @@
             this.tabPage1.Text = "Registro";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // nudCantidad
+            // 
+            this.nudCantidad.Location = new System.Drawing.Point(260, 242);
+            this.nudCantidad.Name = "nudCantidad";
+            this.nudCantidad.Size = new System.Drawing.Size(87, 30);
+            this.nudCantidad.TabIndex = 12;
+            this.nudCantidad.ValueChanged += new System.EventHandler(this.nudCantidad_ValueChanged);
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidad.Location = new System.Drawing.Point(49, 243);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(109, 29);
+            this.lblCantidad.TabIndex = 11;
+            this.lblCantidad.Text = "Cantidad";
+            // 
+            // cmdCancelar
+            // 
+            this.cmdCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdCancelar.Location = new System.Drawing.Point(532, 441);
+            this.cmdCancelar.Name = "cmdCancelar";
+            this.cmdCancelar.Size = new System.Drawing.Size(143, 49);
+            this.cmdCancelar.TabIndex = 9;
+            this.cmdCancelar.Text = "Cancelar";
+            this.cmdCancelar.UseVisualStyleBackColor = true;
+            // 
+            // cmdVerListadoVentas
+            // 
+            this.cmdVerListadoVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdVerListadoVentas.Location = new System.Drawing.Point(369, 441);
+            this.cmdVerListadoVentas.Name = "cmdVerListadoVentas";
+            this.cmdVerListadoVentas.Size = new System.Drawing.Size(143, 49);
+            this.cmdVerListadoVentas.TabIndex = 8;
+            this.cmdVerListadoVentas.Text = "Ver Listado";
+            this.cmdVerListadoVentas.UseVisualStyleBackColor = true;
+            this.cmdVerListadoVentas.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // cmdRegistrarVentas
+            // 
+            this.cmdRegistrarVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRegistrarVentas.Location = new System.Drawing.Point(204, 441);
+            this.cmdRegistrarVentas.Name = "cmdRegistrarVentas";
+            this.cmdRegistrarVentas.Size = new System.Drawing.Size(143, 49);
+            this.cmdRegistrarVentas.TabIndex = 7;
+            this.cmdRegistrarVentas.Text = "Registrar";
+            this.cmdRegistrarVentas.UseVisualStyleBackColor = true;
+            this.cmdRegistrarVentas.Click += new System.EventHandler(this.cmdRegistrar_Click);
+            // 
             // dtpFechaVentas
             // 
             this.dtpFechaVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaVentas.Location = new System.Drawing.Point(260, 238);
+            this.dtpFechaVentas.Location = new System.Drawing.Point(260, 332);
             this.dtpFechaVentas.Name = "dtpFechaVentas";
             this.dtpFechaVentas.Size = new System.Drawing.Size(356, 30);
             this.dtpFechaVentas.TabIndex = 5;
@@ -103,7 +164,7 @@
             // txtNombreVentas
             // 
             this.txtNombreVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreVentas.Location = new System.Drawing.Point(260, 110);
+            this.txtNombreVentas.Location = new System.Drawing.Point(260, 146);
             this.txtNombreVentas.Name = "txtNombreVentas";
             this.txtNombreVentas.Size = new System.Drawing.Size(270, 30);
             this.txtNombreVentas.TabIndex = 4;
@@ -120,7 +181,7 @@
             // 
             this.lblFechaVenta.AutoSize = true;
             this.lblFechaVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaVenta.Location = new System.Drawing.Point(49, 238);
+            this.lblFechaVenta.Location = new System.Drawing.Point(49, 334);
             this.lblFechaVenta.Name = "lblFechaVenta";
             this.lblFechaVenta.Size = new System.Drawing.Size(80, 29);
             this.lblFechaVenta.TabIndex = 2;
@@ -130,7 +191,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(49, 110);
+            this.lblNombre.Location = new System.Drawing.Point(49, 147);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(101, 29);
             this.lblNombre.TabIndex = 1;
@@ -161,37 +222,132 @@
             this.tabConsultaVentas.UseVisualStyleBackColor = true;
             this.tabConsultaVentas.Click += new System.EventHandler(this.tabConsultaVentas_Click);
             // 
-            // cmdRegistrarVentas
+            // cmdConsultarVentas
             // 
-            this.cmdRegistrarVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdRegistrarVentas.Location = new System.Drawing.Point(204, 325);
-            this.cmdRegistrarVentas.Name = "cmdRegistrarVentas";
-            this.cmdRegistrarVentas.Size = new System.Drawing.Size(143, 49);
-            this.cmdRegistrarVentas.TabIndex = 7;
-            this.cmdRegistrarVentas.Text = "Registrar";
-            this.cmdRegistrarVentas.UseVisualStyleBackColor = true;
-            this.cmdRegistrarVentas.Click += new System.EventHandler(this.cmdRegistrar_Click);
+            this.cmdConsultarVentas.Location = new System.Drawing.Point(565, 67);
+            this.cmdConsultarVentas.Name = "cmdConsultarVentas";
+            this.cmdConsultarVentas.Size = new System.Drawing.Size(133, 66);
+            this.cmdConsultarVentas.TabIndex = 3;
+            this.cmdConsultarVentas.Text = "Consultar";
+            this.cmdConsultarVentas.UseVisualStyleBackColor = true;
+            this.cmdConsultarVentas.Click += new System.EventHandler(this.cmdConsultarVentas_Click);
             // 
-            // cmdVerListadoVentas
+            // tabDatos
             // 
-            this.cmdVerListadoVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdVerListadoVentas.Location = new System.Drawing.Point(366, 325);
-            this.cmdVerListadoVentas.Name = "cmdVerListadoVentas";
-            this.cmdVerListadoVentas.Size = new System.Drawing.Size(143, 49);
-            this.cmdVerListadoVentas.TabIndex = 8;
-            this.cmdVerListadoVentas.Text = "Ver Listado";
-            this.cmdVerListadoVentas.UseVisualStyleBackColor = true;
-            this.cmdVerListadoVentas.Click += new System.EventHandler(this.button1_Click_1);
+            this.tabDatos.Controls.Add(this.tabPage2);
+            this.tabDatos.Controls.Add(this.tabNombres);
+            this.tabDatos.Location = new System.Drawing.Point(42, 209);
+            this.tabDatos.Name = "tabDatos";
+            this.tabDatos.SelectedIndex = 0;
+            this.tabDatos.Size = new System.Drawing.Size(632, 323);
+            this.tabDatos.TabIndex = 2;
             // 
-            // cmdCancelar
+            // tabPage2
             // 
-            this.cmdCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdCancelar.Location = new System.Drawing.Point(527, 325);
-            this.cmdCancelar.Name = "cmdCancelar";
-            this.cmdCancelar.Size = new System.Drawing.Size(143, 49);
-            this.cmdCancelar.TabIndex = 9;
-            this.cmdCancelar.Text = "Cancelar";
-            this.cmdCancelar.UseVisualStyleBackColor = true;
+            this.tabPage2.Controls.Add(this.cmdMostrarCantidad);
+            this.tabPage2.Controls.Add(this.lstResultados);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.nudIngreseCantidad);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(624, 285);
+            this.tabPage2.TabIndex = 0;
+            this.tabPage2.Text = "Cantidad";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // cmdMostrarCantidad
+            // 
+            this.cmdMostrarCantidad.Location = new System.Drawing.Point(431, 33);
+            this.cmdMostrarCantidad.Name = "cmdMostrarCantidad";
+            this.cmdMostrarCantidad.Size = new System.Drawing.Size(94, 34);
+            this.cmdMostrarCantidad.TabIndex = 3;
+            this.cmdMostrarCantidad.Text = "Mostrar";
+            this.cmdMostrarCantidad.UseVisualStyleBackColor = true;
+            this.cmdMostrarCantidad.Click += new System.EventHandler(this.cmdMostrarCantidad_Click);
+            // 
+            // lstResultados
+            // 
+            this.lstResultados.FormattingEnabled = true;
+            this.lstResultados.ItemHeight = 25;
+            this.lstResultados.Location = new System.Drawing.Point(39, 86);
+            this.lstResultados.Name = "lstResultados";
+            this.lstResultados.Size = new System.Drawing.Size(529, 179);
+            this.lstResultados.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(88, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Ingrese cantidad";
+            // 
+            // nudIngreseCantidad
+            // 
+            this.nudIngreseCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudIngreseCantidad.Location = new System.Drawing.Point(92, 36);
+            this.nudIngreseCantidad.Name = "nudIngreseCantidad";
+            this.nudIngreseCantidad.Size = new System.Drawing.Size(158, 30);
+            this.nudIngreseCantidad.TabIndex = 0;
+            this.nudIngreseCantidad.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // tabNombres
+            // 
+            this.tabNombres.Controls.Add(this.cboNombreProductos);
+            this.tabNombres.Controls.Add(this.lstVentasRegistradas);
+            this.tabNombres.Controls.Add(this.label2);
+            this.tabNombres.Controls.Add(this.cmdMostrarVentas);
+            this.tabNombres.Location = new System.Drawing.Point(4, 34);
+            this.tabNombres.Name = "tabNombres";
+            this.tabNombres.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNombres.Size = new System.Drawing.Size(624, 285);
+            this.tabNombres.TabIndex = 1;
+            this.tabNombres.Text = "Vendidos";
+            this.tabNombres.UseVisualStyleBackColor = true;
+            this.tabNombres.Click += new System.EventHandler(this.tabNombres_Click);
+            // 
+            // cboNombreProductos
+            // 
+            this.cboNombreProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNombreProductos.FormattingEnabled = true;
+            this.cboNombreProductos.Location = new System.Drawing.Point(98, 47);
+            this.cboNombreProductos.Name = "cboNombreProductos";
+            this.cboNombreProductos.Size = new System.Drawing.Size(198, 28);
+            this.cboNombreProductos.TabIndex = 4;
+            this.cboNombreProductos.SelectedIndexChanged += new System.EventHandler(this.cboNombreProductos_SelectedIndexChanged);
+            // 
+            // lstVentasRegistradas
+            // 
+            this.lstVentasRegistradas.FormattingEnabled = true;
+            this.lstVentasRegistradas.ItemHeight = 25;
+            this.lstVentasRegistradas.Location = new System.Drawing.Point(39, 91);
+            this.lstVentasRegistradas.Name = "lstVentasRegistradas";
+            this.lstVentasRegistradas.Size = new System.Drawing.Size(557, 179);
+            this.lstVentasRegistradas.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(94, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(213, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Ingrese nombre del producto";
+            // 
+            // cmdMostrarVentas
+            // 
+            this.cmdMostrarVentas.Location = new System.Drawing.Point(409, 39);
+            this.cmdMostrarVentas.Name = "cmdMostrarVentas";
+            this.cmdMostrarVentas.Size = new System.Drawing.Size(112, 38);
+            this.cmdMostrarVentas.TabIndex = 0;
+            this.cmdMostrarVentas.Text = "Mostrar";
+            this.cmdMostrarVentas.UseVisualStyleBackColor = true;
+            this.cmdMostrarVentas.Click += new System.EventHandler(this.cmdMostrarVentas_Click);
             // 
             // dgvVentas
             // 
@@ -201,68 +357,11 @@
             this.Nombre,
             this.Column2,
             this.Column3});
-            this.dgvVentas.Location = new System.Drawing.Point(83, 253);
+            this.dgvVentas.Location = new System.Drawing.Point(6, 6);
             this.dgvVentas.Name = "dgvVentas";
-            this.dgvVentas.Size = new System.Drawing.Size(543, 273);
+            this.dgvVentas.Size = new System.Drawing.Size(543, 197);
             this.dgvVentas.TabIndex = 1;
             this.dgvVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellContentClick);
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidad.Location = new System.Drawing.Point(49, 171);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(109, 29);
-            this.lblCantidad.TabIndex = 11;
-            this.lblCantidad.Text = "Cantidad";
-            // 
-            // tabDatos
-            // 
-            this.tabDatos.Controls.Add(this.tabPage2);
-            this.tabDatos.Controls.Add(this.tabNombres);
-            this.tabDatos.Location = new System.Drawing.Point(22, 29);
-            this.tabDatos.Name = "tabDatos";
-            this.tabDatos.SelectedIndex = 0;
-            this.tabDatos.Size = new System.Drawing.Size(482, 182);
-            this.tabDatos.TabIndex = 2;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(474, 144);
-            this.tabPage2.TabIndex = 0;
-            this.tabPage2.Text = "Datos";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabNombres
-            // 
-            this.tabNombres.Location = new System.Drawing.Point(4, 34);
-            this.tabNombres.Name = "tabNombres";
-            this.tabNombres.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNombres.Size = new System.Drawing.Size(474, 144);
-            this.tabNombres.TabIndex = 1;
-            this.tabNombres.Text = "Nombres";
-            this.tabNombres.UseVisualStyleBackColor = true;
-            // 
-            // cmdConsultarVentas
-            // 
-            this.cmdConsultarVentas.Location = new System.Drawing.Point(543, 108);
-            this.cmdConsultarVentas.Name = "cmdConsultarVentas";
-            this.cmdConsultarVentas.Size = new System.Drawing.Size(133, 66);
-            this.cmdConsultarVentas.TabIndex = 3;
-            this.cmdConsultarVentas.Text = "Consultar";
-            this.cmdConsultarVentas.UseVisualStyleBackColor = true;
-            this.cmdConsultarVentas.Click += new System.EventHandler(this.cmdConsultarVentas_Click);
-            // 
-            // nudCantidad
-            // 
-            this.nudCantidad.Location = new System.Drawing.Point(260, 172);
-            this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(87, 30);
-            this.nudCantidad.TabIndex = 12;
             // 
             // Column1
             // 
@@ -289,7 +388,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 609);
+            this.ClientSize = new System.Drawing.Size(742, 601);
             this.Controls.Add(this.tabRegistroVentas);
             this.Name = "frmCargaVentas";
             this.Text = "Carga de Ventas";
@@ -297,10 +396,15 @@
             this.tabRegistroVentas.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabConsultaVentas.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
-            this.tabDatos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
+            this.tabConsultaVentas.ResumeLayout(false);
+            this.tabDatos.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIngreseCantidad)).EndInit();
+            this.tabNombres.ResumeLayout(false);
+            this.tabNombres.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,5 +434,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button cmdMostrarCantidad;
+        private System.Windows.Forms.ListBox lstResultados;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown nudIngreseCantidad;
+        private System.Windows.Forms.ListBox lstVentasRegistradas;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button cmdMostrarVentas;
+        private System.Windows.Forms.ComboBox cboNombreProductos;
     }
 }
