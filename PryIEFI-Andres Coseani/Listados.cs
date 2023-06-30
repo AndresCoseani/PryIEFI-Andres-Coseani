@@ -44,7 +44,7 @@ namespace PryIEFI_Andres_Coseani
 
                 if (varOperacion == "Ventas")
                 {
-                    this.Text = "Listado de Ventas";
+                    
                     for (int IndiceFilas = 0; IndiceFilas < MatrizListados.GetLength(0); IndiceFilas++)
                     {
                         if (MatrizListados[IndiceFilas, 0] != null)
@@ -74,18 +74,7 @@ namespace PryIEFI_Andres_Coseani
         
         private void frmListados_Load(object sender, EventArgs e)
         {
-            //int IndiceFilasP = 0;
-            //int IndiceColumnasP = 0;
-
-            //for (int IndicefilasP = 0; IndiceFilasP < VentanaProductos.MatrizProductos.GetLength(0); IndiceFilasP++)
-            //{
-            //    string filaP = "\"" + VentanaProductos.MatrizProductos[IndiceFilasP, IndiceColumnasP] + "\" ";
-            //    ;
-            //    for (int IndicecolumnasP = 0; IndiceColumnasP < VentanaProductos.MatrizProductos.GetLength(1); IndiceColumnasP++)
-            //    {
-            //        filaP += VentanaProductos.MatrizProductos[IndiceFilasP, IndiceColumnasP] + " ";
-            //    }
-            //    lstDetallesProductos.Items.Add(filaP.Trim());
+            
 
 
 
@@ -94,8 +83,11 @@ namespace PryIEFI_Andres_Coseani
             
 
         }
-        
 
+        private void lstDetallesProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void lstDetallesVentas_SelectedIndexChanged(object sender, EventArgs e)
         {

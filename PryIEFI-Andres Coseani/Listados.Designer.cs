@@ -67,6 +67,7 @@
             this.lstDetallesProductos.Name = "lstDetallesProductos";
             this.lstDetallesProductos.Size = new System.Drawing.Size(496, 454);
             this.lstDetallesProductos.TabIndex = 6;
+            this.lstDetallesProductos.SelectedIndexChanged += new System.EventHandler(this.lstDetallesProductos_SelectedIndexChanged);
             // 
             // lstDetallesVentas
             // 
